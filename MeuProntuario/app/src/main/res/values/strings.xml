@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Meu Prontuário</string>
+    <string name="title_activity_home">home</string>
+    <string name="title_home">Home</string>
+    <string name="title_prontuario">Prontuário</string>
+    <string name="title_perfil">Perfil</string>
+</resources>
