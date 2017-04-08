@@ -30,8 +30,17 @@ public class LoginActivity extends AppCompatActivity {
         txtEmail = (EditText)findViewById(R.id.txtEmail);
         txtSenha = (EditText)findViewById(R.id.txtSenha);
         txtvEsqueceSenha = (TextView) findViewById(R.id.textViewEsqueceuSenha);
+        Button btnCadastrar = (Button)findViewById(R.id.button_cadastrar);
 
         //Eventos click
+
+        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent cadastro = new Intent(LoginActivity.this,CadastroActivity.class);
+                    startActivity(cadastro);
+            }
+        });
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override

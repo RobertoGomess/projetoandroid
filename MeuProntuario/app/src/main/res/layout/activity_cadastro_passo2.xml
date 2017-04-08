@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.meuprontuario.meuprontuario.CadastroPasso2Activity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informações Pessoais"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp" />
+
+    <EditText
+        android:drawableLeft="@drawable/ic_account_grey600_24dp"
+        android:id="@+id/editText2"
+        android:layout_width="348dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="34dp"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/textView2"
+        android:layout_alignStart="@+id/editText5" />
+
+    <EditText
+        android:drawableLeft="@drawable/ic_call_36dp"
+        android:id="@+id/editText5"
+        android:layout_width="348dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Telefone"
+        android:inputType="phone"
+        android:layout_below="@+id/editText2"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:drawableLeft="@drawable/ic_account_grey600_24dp"
+        android:id="@+id/editText6"
+        android:layout_width="348dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="CPF"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/editText5"
+        android:layout_alignStart="@+id/editText5" />
+
+    <Button
+        android:id="@+id/button_completar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editText6"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/editText6"
+        android:layout_marginBottom="70dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Finalizar cadastro"
+        android:textColor="#FFF" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="348dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/editText6"
+        android:layout_alignStart="@+id/editText6"
+        android:layout_below="@+id/editText6"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:hint="Data de Nasicmento"
+        android:inputType="date" />
+
+</RelativeLayout>
