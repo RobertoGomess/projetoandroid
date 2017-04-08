@@ -20,7 +20,7 @@
         android:layout_marginTop="12dp" />
 
     <EditText
-        android:drawableLeft="@drawable/ic_account_grey600_24dp"
+        android:drawableLeft="@drawable/ic_account_circle_36dp"
         android:id="@+id/editText2"
         android:layout_width="348dp"
         android:layout_height="50dp"
@@ -32,7 +32,7 @@
         android:layout_alignStart="@+id/editText5" />
 
     <EditText
-        android:drawableLeft="@drawable/ic_call_36dp"
+        android:drawableLeft="@drawable/ic_local_phone_36dp"
         android:id="@+id/editText5"
         android:layout_width="348dp"
         android:layout_height="50dp"
@@ -44,7 +44,7 @@
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:drawableLeft="@drawable/ic_account_grey600_24dp"
+        android:drawableLeft="@drawable/ic_account_box_36dp"
         android:id="@+id/editText6"
         android:layout_width="348dp"
         android:layout_height="50dp"
@@ -64,19 +64,19 @@
         android:layout_alignStart="@+id/editText6"
         android:layout_marginBottom="70dp"
         android:background="@color/colorPrimaryDark"
-        android:text="Finalizar cadastro"
+        android:text="concluir cadastro"
         android:textColor="#FFF" />
 
     <EditText
         android:id="@+id/editText8"
         android:layout_width="348dp"
         android:layout_height="50dp"
-        android:layout_alignEnd="@+id/editText6"
-        android:layout_alignStart="@+id/editText6"
-        android:layout_below="@+id/editText6"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="18dp"
         android:ems="10"
         android:hint="Data de Nasicmento"
-        android:inputType="date" />
+        android:inputType="date"
+        android:drawableLeft="@drawable/ic_date_range_36dp"
+        android:layout_below="@+id/editText6"
+        android:layout_alignStart="@+id/editText6" />
 
 </RelativeLayout>
