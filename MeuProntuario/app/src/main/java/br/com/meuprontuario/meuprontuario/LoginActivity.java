@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
 /**
@@ -15,30 +16,49 @@ import android.widget.TextView;
 public class LoginActivity extends AppCompatActivity {
 
     //declaração dos elementos
+
+    Button btnCadastrar;
     Button btnEntrar;
     EditText txtEmail;
     EditText txtSenha;
+    Switch switchLembraSenha;
     TextView txtvEsqueceSenha;
+
+    //declaração variaveis
+
     boolean login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         //instanciando elementos
-        btnEntrar = (Button)findViewById(R.id.btn_Entrar);
-        txtEmail = (EditText)findViewById(R.id.txtEmail);
-        txtSenha = (EditText)findViewById(R.id.txtSenha);
+
+        txtEmail = (EditText)findViewById(R.id.txtNomeUsuario);
+        txtSenha = (EditText)findViewById(R.id.txtConfirmaSenha);
+        switchLembraSenha = (Switch)findViewById(R.id.switchLembraSenha);
         txtvEsqueceSenha = (TextView) findViewById(R.id.textViewEsqueceuSenha);
-        Button btnCadastrar = (Button)findViewById(R.id.button_cadastrar);
+        btnCadastrar = (Button)findViewById(R.id.btnCadastrar);
+        btnEntrar = (Button)findViewById(R.id.btn_Entrar);
 
         //Eventos click
+
+        txtvEsqueceSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent esqueceuSenha = new Intent(LoginActivity.this,EsqueceuSenhaActivity.class);
+                //passando valor para a outra activity
+                esqueceuSenha.putExtra("VALOR",txtEmail.getText().toString());
+                startActivity(esqueceuSenha);
+            }
+        });
 
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Intent cadastro = new Intent(LoginActivity.this,CadastroActivity.class);
-                    startActivity(cadastro);
+                Intent cadastro = new Intent(LoginActivity.this,CadastroActivity.class);
+                startActivity(cadastro);
             }
         });
 
@@ -56,16 +76,6 @@ public class LoginActivity extends AppCompatActivity {
                     finish();
                 }
 
-            }
-        });
-
-        txtvEsqueceSenha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent esqueceuSenha = new Intent(LoginActivity.this,EsqueceuSenhaActivity.class);
-                //passando valor para a outra activity
-                esqueceuSenha.putExtra("VALOR",txtEmail.getText().toString());
-                startActivity(esqueceuSenha);
             }
         });
 

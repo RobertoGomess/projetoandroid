@@ -6,94 +6,105 @@
     android:layout_height="match_parent"
     tools:context="br.com.meuprontuario.meuprontuario.CadastroActivity">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="340dp"
-        android:layout_height="50dp"
+    <TextView
+        android:id="@+id/txtViewInforAcesso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/editText_email"
-        android:layout_marginTop="63dp"
-        android:drawableLeft="@drawable/ic_account_box_36dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:text="Informações de acesso"
+        android:textAlignment="center"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/txtNomeUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:drawableLeft="@drawable/ic_account_circle"
         android:ems="10"
         android:hint="Nome de Usuário"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_below="@+id/txtViewInforAcesso"
+        android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/editText_email"
-        android:layout_width="340dp"
-        android:layout_height="50dp"
-        android:layout_alignStart="@+id/editText4"
-        android:layout_below="@+id/editText"
-        android:layout_marginTop="20dp"
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:drawableLeft="@drawable/ic_mail_outline_36dp"
         android:ems="10"
         android:hint="E-mail"
-        android:inputType="phone"
+        android:inputType="textEmailAddress"
         tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="74dp" />
+        tools:layout_editor_absoluteY="74dp"
+        android:layout_below="@+id/txtNomeUsuario"
+        android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="340dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/editText4"
+        android:id="@+id/txtSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:drawableLeft="@drawable/ic_lock"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="127dp"
+        android:layout_below="@+id/txtEmail"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/txtConfirmaSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/txtSenha"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
-        android:drawableLeft="@drawable/ic_lock_36dp"
+        android:drawableLeft="@drawable/ic_lock"
         android:ems="10"
         android:hint="Repita a senha"
         android:inputType="textPassword"
         tools:layout_editor_absoluteX="22dp"
         tools:layout_editor_absoluteY="182dp" />
 
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="340dp"
-        android:layout_height="50dp"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_below="@+id/editText_email"
-        android:layout_marginTop="19dp"
-        android:drawableLeft="@drawable/ic_lock_36dp"
-        android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="127dp" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
-        android:text="Informações de Acesso"
-        android:textAlignment="center"
-        android:textSize="25sp" />
-
     <Switch
-        android:id="@+id/switch_aceito"
+        android:id="@+id/switchTermos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_below="@+id/editText3"
-        android:layout_marginTop="23dp"
+
+        android:layout_alignStart="@+id/txtConfirmaSenha"
+        android:layout_below="@+id/txtConfirmaSenha"
+        android:layout_marginTop="20dp"
         android:shadowColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorHint"
         android:text="Confirmo que li a política de privacidade e aceito os termos de uso."
-        android:layout_alignEnd="@+id/editText3" />
+        android:layout_alignEnd="@+id/txtConfirmaSenha" />
 
     <Button
-        android:id="@+id/button_cadastrar"
+        android:id="@+id/btnCadastrarPasso2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/switch_aceito"
-        android:layout_alignStart="@+id/switch_aceito"
-        android:layout_below="@+id/switch_aceito"
-        android:layout_marginTop="28dp"
-        android:textColor="#FFF"
+        android:layout_marginTop="70dp"
+        android:padding="10dp"
         android:background="@color/colorPrimaryDark"
-        android:text="Cadastrar-se" />
+        android:text="Cadastrar-se"
+        android:textColor="@color/colorBranco"
+        android:layout_below="@+id/switchTermos"
+        android:layout_alignEnd="@+id/switchTermos"
+        android:layout_marginEnd="10dp" />
 
 </RelativeLayout>
