@@ -12,13 +12,13 @@ import android.widget.TextView;
 public class CadastroActivity extends AppCompatActivity {
 
     //decaração do componentes
-    TextView txtvInforAcesso;
-    EditText txtNomeUsuario;
-    EditText txtEmail;
-    EditText txtvSenha;
-    EditText txtConfirmaSenha;
-    Switch switchTermos;
-    Button btnCadastrarPasso2;
+    private TextView txtvInforAcesso;
+    private EditText txtNomeUsuario;
+    private EditText txtEmail;
+    private EditText txtvSenha;
+    private EditText txtConfirmaSenha;
+    private Switch switchTermos;
+    private Button btnCadastrarPasso2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

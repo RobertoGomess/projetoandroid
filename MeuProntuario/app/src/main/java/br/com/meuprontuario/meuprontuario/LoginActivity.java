@@ -17,12 +17,12 @@ public class LoginActivity extends AppCompatActivity {
 
     //declaração dos elementos
 
-    Button btnCadastrar;
-    Button btnEntrar;
-    EditText txtEmail;
-    EditText txtSenha;
-    Switch switchLembraSenha;
-    TextView txtvEsqueceSenha;
+    private Button btnCadastrar;
+    private Button btnEntrar;
+    private EditText txtEmail;
+    private EditText txtSenha;
+    private Switch switchLembraSenha;
+    private TextView txtvEsqueceSenha;
 
     //declaração variaveis
 

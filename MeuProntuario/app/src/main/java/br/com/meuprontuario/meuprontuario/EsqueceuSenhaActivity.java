@@ -14,8 +14,8 @@ import android.widget.Toast;
 
 public class EsqueceuSenhaActivity extends AppCompatActivity {
 
-    EditText txtEsqueceuEmail;
-    Button btnEsqueceuSenha;
+    private EditText txtEsqueceuEmail;
+    private Button btnEsqueceuSenha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

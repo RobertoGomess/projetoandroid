@@ -11,12 +11,12 @@ import android.widget.Toast;
 public class CadastroPasso2Activity extends AppCompatActivity {
 
     //declaracao de componentes
-    TextView txtvInforPessoa;
-    EditText txtNome;
-    EditText txtTelefone;
-    EditText txtCpf;
-    EditText txtDataNascimento;
-    Button btnConcluir;
+    private TextView txtvInforPessoa;
+    private EditText txtNome;
+    private EditText txtTelefone;
+    private EditText txtCpf;
+    private EditText txtDataNascimento;
+    private Button btnConcluir;
 
 
 
