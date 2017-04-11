@@ -5,6 +5,10 @@
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_grey600_36dp"
         android:title="@string/title_home" />
+    <item
+        android:id="@+id/navigation_emergencia"
+        android:icon="@drawable/ic_emergency_ambulance"
+        android:title="@string/title_emergencia" />
 
     <item
         android:id="@+id/navigation_prontuario"

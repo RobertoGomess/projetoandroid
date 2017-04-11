@@ -20,6 +20,9 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.title_home);
                     return true;
+                case R.id.navigation_emergencia:
+                    mTextMessage.setText(R.string.title_emergencia);
+                    return true;
                 case R.id.navigation_prontuario:
                     mTextMessage.setText(R.string.title_prontuario);
                     return true;
