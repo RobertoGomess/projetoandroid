@@ -1,5 +1,6 @@
 package br.com.meuprontuario.meuprontuario;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -37,7 +38,9 @@ public class CadastroPasso2Activity extends AppCompatActivity {
         btnConcluir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "click do botao concluir" ,Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), "click do botao concluir" ,Toast.LENGTH_LONG).show();
+                Intent cadastroEndereco = new Intent(CadastroPasso2Activity.this,CadastroPasso3Activity.class);
+                startActivity(cadastroEndereco);
             }
         });
 

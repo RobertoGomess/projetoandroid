@@ -40,17 +40,17 @@
             android:id="@+id/txtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/txtNomeUsuario"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
             android:drawableLeft="@drawable/ic_mail_outline_36dp"
             android:ems="10"
             android:hint="E-mail"
             android:inputType="textEmailAddress"
             tools:layout_editor_absoluteX="22dp"
-            tools:layout_editor_absoluteY="74dp"
-            android:layout_below="@+id/txtNomeUsuario"
-            android:layout_alignParentStart="true" />
+            tools:layout_editor_absoluteY="74dp" />
 
         <EditText
             android:id="@+id/txtSenha"
