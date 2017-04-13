@@ -110,29 +110,16 @@
             android:layout_alignEnd="@+id/editText_cidade"
             android:layout_alignStart="@+id/editText_cidade" />
         <Button
-            android:id="@+id/btn_pular"
+            android:id="@+id/btn_enviar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
-            android:text="pular"
+            android:text="Enviar"
             android:textColor="#FFF"
             android:layout_marginTop="23dp"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="10dp"
             android:layout_below="@+id/editText_estado"
-            android:layout_alignStart="@+id/editText_estado" />
-
-        <Button
-            android:id="@+id/btn_enviar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="Enviar"
-            android:textColor="#FFF"
-            android:layout_marginEnd="24dp"
-            android:layout_alignBaseline="@+id/btn_pular"
-            android:layout_alignBottom="@+id/btn_pular"
             android:layout_alignEnd="@+id/editText_estado" />
 
     </RelativeLayout>
