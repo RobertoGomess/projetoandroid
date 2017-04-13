@@ -31,7 +31,8 @@
             android:label="Meu Prontuário" />
         <activity android:name=".CadastroActivity" />
         <activity android:name=".CadastroPasso2Activity" />
-        <activity android:name=".CadastroPasso3Activity"></activity>
+        <activity android:name=".CadastroPasso3Activity" />
+        <activity android:name=".Main2Activity"></activity>
     </application>
 
 </manifest>
