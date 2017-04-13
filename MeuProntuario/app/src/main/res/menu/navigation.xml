@@ -9,6 +9,10 @@
         android:id="@+id/navigation_emergencia"
         android:icon="@drawable/ic_emergency_ambulance"
         android:title="@string/title_emergencia" />
+    <item
+        android:id="@+id/navigation_consultas"
+        android:icon="@drawable/ic_fichamedica_grey600_36dp"
+        android:title="@string/title_consultas" />
 
     <item
         android:id="@+id/navigation_perfil"

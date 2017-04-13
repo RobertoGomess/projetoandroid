@@ -14,14 +14,6 @@ public class CadastroPasso3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_passo3);
 
-        Button btn_pular = (Button)findViewById(R.id.btn_pular);
 
-        btn_pular.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent home = new Intent(CadastroPasso3Activity.this,HomeActivity.class);
-                startActivity(home);
-            }
-        });
     }
 }

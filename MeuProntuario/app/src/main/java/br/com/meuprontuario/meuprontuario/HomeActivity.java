@@ -4,14 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
-    private Intent tela;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -19,18 +22,16 @@ public class HomeActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    // já vai estar na tela
+                    mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_emergencia:
-                    tela = new Intent(HomeActivity.this,EmergenciaActivity.class);
-                    startActivity(tela);
+                    mTextMessage.setText(R.string.title_emergencia);
                     return true;
-                /*case R.id.navigation_prontuario:
-                    mTextMessage.setText(R.string.title_prontuario);
-                    return true;*/
+                case R.id.navigation_consultas:
+                    mTextMessage.setText(R.string.title_consultas);
+                    return true;
                 case R.id.navigation_perfil:
-                    tela = new Intent(HomeActivity.this,PerfilActivity.class);
-                    startActivity(tela);
+                    mTextMessage.setText(R.string.title_perfil);
                     return true;
             }
             return false;
