@@ -1,7 +1,10 @@
 package br.com.meuprontuario.meuprontuario;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.net.sip.SipSession;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -18,19 +21,29 @@ import android.widget.Toast;
  */
 
 public class EmergenciaFragment extends Fragment {
-    @Nullable
+    private FloatingActionButton btnLigar;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_emergencia,container,false);
+        btnLigar = (FloatingActionButton)view.findViewById(R.id.floatingActionButtonLigar);
+        btnLigar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try{
+                    Uri uri = Uri.parse("tel:192");
+                    Intent i = new Intent(Intent.ACTION_DIAL,uri);
+                    startActivity(i);
+                }catch (Exception e){
+                    Toast.makeText(getContext(),"Não foi possível realizar a ligação. "+e.getMessage(),Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
-        try{
-            Uri uri = Uri.parse("tel:192");
-            Intent i = new Intent(Intent.ACTION_DIAL,uri);
-            startActivity(i);
-        }catch (Exception e){
-            Toast.makeText(getContext(),"Não foi realizar a ligação. "+e.getMessage(),Toast.LENGTH_LONG).show();
-        }
         return view;
     }
+
+
 }
+
