@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.meuprontuario.meuprontuario">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -32,9 +34,6 @@
         <activity android:name=".CadastroActivity" />
         <activity android:name=".CadastroPasso2Activity" />
         <activity android:name=".CadastroPasso3Activity" />
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".EmergenciaActivity" />
-        <activity android:name=".PerfilActivity"></activity>
     </application>
 
 </manifest>
