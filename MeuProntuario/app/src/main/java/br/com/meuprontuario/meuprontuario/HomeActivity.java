@@ -11,8 +11,10 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,7 +41,21 @@ public class HomeActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         //passando um buttom para ser o primeiro selecionado ao abrir o menu
         navigation.setSelectedItemId(R.id.navigation_home);
+        //instanciando tollbar personalizada
+        Toolbar toolbar = (Toolbar)findViewById(R.id.my_toolbar);
+        setSupportActionBar(toolbar);
 
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // handle arrow click here
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -99,28 +115,4 @@ public class HomeActivity extends AppCompatActivity {
 
     };
 
-
-/*
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        navigation.setSelectedItemId(R.id.navigation_home);
-        if (navigation.getSelectedItemId()==R.id.navigation_home){
-            AlertDialog.Builder alert = new AlertDialog.Builder(this);
-            alert.setMessage("Deseja sair do aplicativo?");
-            alert.setPositiveButton("Sim", new DialogInterface.OnClickListener(){
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(getApplicationContext(),"button ok",Toast.LENGTH_LONG).show();
-                        }
-                    }
-
-            );
-            alert.setNegativeButton("Não",null);
-            alert.create().show();
-
-        }else {
-            return;
-        }
-    }*/
 }
