@@ -16,6 +16,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,11 +43,17 @@ public class HomeActivity extends AppCompatActivity {
         //passando um buttom para ser o primeiro selecionado ao abrir o menu
         navigation.setSelectedItemId(R.id.navigation_home);
         //instanciando tollbar personalizada
-        Toolbar toolbar = (Toolbar)findViewById(R.id.my_toolbar);
-        setSupportActionBar(toolbar);
-
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_toolbar_home, menu);
+        return true;
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

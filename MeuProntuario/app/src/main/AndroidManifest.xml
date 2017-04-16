@@ -30,7 +30,7 @@
             android:value="@string/key_api_maps"/>
 
         <activity android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,7 +50,7 @@
         <activity
             android:name=".HomeActivity"
             android:label="Meu Prontuário"
-            android:theme="@style/AppTheme.ActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".CadastroActivity" />
         <activity android:name=".CadastroPasso2Activity" />
         <activity android:name=".CadastroPasso3Activity" />

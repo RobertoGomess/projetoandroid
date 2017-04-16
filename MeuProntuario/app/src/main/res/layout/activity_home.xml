@@ -9,22 +9,27 @@
     android:orientation="vertical"
     tools:context="br.com.meuprontuario.meuprontuario.HomeActivity"
     >
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="50dp"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
-        android:title="Home"
-        app:subtitleTextColor="@color/colorBranco"
+        android:theme="@style/AppTheme"
+        app:title="Aqui sera um menu"
         app:titleTextColor="@color/colorBranco"
-        android:theme="@style/AppTheme.ActionBar" />
-        <RelativeLayout
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+
+       <RelativeLayout
             android:id="@+id/frag_tela"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
         </RelativeLayout>
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
@@ -33,7 +38,10 @@
         android:background="?android:attr/windowBackground"
         app:menu="@menu/navigation"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        app:theme="@style/AppTheme">
+
+    </android.support.design.widget.BottomNavigationView>
 
 
 </RelativeLayout>
