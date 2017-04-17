@@ -45,6 +45,7 @@ public class HomeActivity extends AppCompatActivity {
         //instanciando tollbar personalizada
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
     @Override
