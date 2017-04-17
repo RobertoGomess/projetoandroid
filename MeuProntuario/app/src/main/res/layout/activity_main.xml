@@ -8,13 +8,11 @@
     tools:context="br.com.meuprontuario.meuprontuario.MainActivity"
     >
 
-    <TextView
-        android:id="@+id/textView"
+    <ImageView
+        android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="217dp"
-        android:text="Aqui será a logo" />
+        app:srcCompat="@drawable/ic_launcher"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

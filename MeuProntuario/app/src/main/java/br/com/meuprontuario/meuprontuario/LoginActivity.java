@@ -68,9 +68,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = txtEmail.getText().toString();
                 String senha = txtSenha.getText().toString();
-                if(email == null || email == "" || senha == "" || senha == null){
-                    //alerta
-                }else{
                     //code condicao...
                     //condicao para chamar a outra tela...
                     login=true;
@@ -80,7 +77,6 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(home);
                         //finaliza a tela atual
                         finish();
-                    }
                 }
 
             }
