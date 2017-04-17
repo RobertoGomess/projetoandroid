@@ -2,6 +2,7 @@ package br.com.meuprontuario.meuprontuario;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -65,15 +66,21 @@ public class LoginActivity extends AppCompatActivity {
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //code condicao...
-                //condicao para chamar a outra tela...
-                login=true;
-                if (login==true){
-                    Intent home = new Intent(LoginActivity.this,HomeActivity.class);
-                    //abre a tela home
-                    startActivity(home);
-                    //finaliza a tela atual
-                    finish();
+                String email = txtEmail.getText().toString();
+                String senha = txtSenha.getText().toString();
+                if(email == null || email == "" || senha == "" || senha == null){
+                    //alerta
+                }else{
+                    //code condicao...
+                    //condicao para chamar a outra tela...
+                    login=true;
+                    if (login==true){
+                        Intent home = new Intent(LoginActivity.this,HomeActivity.class);
+                        //abre a tela home
+                        startActivity(home);
+                        //finaliza a tela atual
+                        finish();
+                    }
                 }
 
             }
