@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class Receita {
 
-    public Receita(int id, Date data, Date validade, String doenca, String descricao) {
+    public Receita(int id, String data, String validade, String doenca, String descricao) {
         this.id = id;
         this.data = data;
         this.validade = validade;
@@ -17,8 +17,8 @@ public class Receita {
     }
 
     private int id;
-    private Date data;
-    private Date validade;
+    private String data;
+    private String validade;
     private String doenca;
     private String descricao;
 
@@ -30,19 +30,19 @@ public class Receita {
         this.id = id;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 
-    public Date getValidade() {
+    public String getValidade() {
         return validade;
     }
 
-    public void setValidade(Date validade) {
+    public void setValidade(String validade) {
         this.validade = validade;
     }
 
