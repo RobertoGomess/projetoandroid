@@ -29,8 +29,8 @@ public class ReceitaAdapter extends RecyclerView.Adapter<ListViewHolder>{
     public void onBindViewHolder(ListViewHolder holder, int position) {
         holder.textViewDoenca.setText(listReceitas.get(position).getDoenca());
         holder.textViewDescricao.setText(listReceitas.get(position).getDescricao());
-        holder.textViewValidade.setText(listReceitas.get(position).getValidade());
-        holder.textViewData.setText(listReceitas.get(position).getData());
+        holder.textViewValidade.setText(listReceitas.get(position).getValidade().toString());
+        holder.textViewData.setText(listReceitas.get(position).getData().toString());
     }
 
     @Override

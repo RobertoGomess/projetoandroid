@@ -4,10 +4,16 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int TIME_DELAY_TELA = 4000;
+    private static int TIME_DELAY_TELA = 2000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,5 +27,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         },TIME_DELAY_TELA);
+
     }
 }
