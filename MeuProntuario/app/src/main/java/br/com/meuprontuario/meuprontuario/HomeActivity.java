@@ -32,6 +32,15 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity {
 
     BottomNavigationView navigation;
+    public List<Receita> getListaReceita (){
+        List<Receita> listReceita = new ArrayList<>();
+        for (int x = 0; x<20; x++){
+            Receita receita = new Receita(x,x+1+"/01/2017",x+1+"/03/2017","Doenca"+x,"Descricao"+x);
+            listReceita.add(receita);
+        }
+        return listReceita;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
