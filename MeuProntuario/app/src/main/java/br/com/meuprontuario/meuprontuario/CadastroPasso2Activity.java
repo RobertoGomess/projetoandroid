@@ -3,6 +3,8 @@ package br.com.meuprontuario.meuprontuario;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +22,6 @@ public class CadastroPasso2Activity extends AppCompatActivity {
     private Button btnConcluir;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,10 @@ public class CadastroPasso2Activity extends AppCompatActivity {
         txtCpf = (EditText)findViewById(R.id.txtCpf);
         txtDataNascimento = (EditText)findViewById(R.id.txtDataNascimento);
         btnConcluir = (Button)findViewById(R.id.btnConcluir);
+        //instanciando ToolBar
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //eventos
         btnConcluir.setOnClickListener(new View.OnClickListener() {
@@ -45,5 +50,11 @@ public class CadastroPasso2Activity extends AppCompatActivity {
         });
 
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+
+        return super.onOptionsItemSelected(item);
     }
 }

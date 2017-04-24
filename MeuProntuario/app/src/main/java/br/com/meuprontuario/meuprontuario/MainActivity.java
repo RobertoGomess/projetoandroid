@@ -12,7 +12,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int TIME_DELAY_TELA = 2000;
+    private static int TIME_DELAY_TELA = 1500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

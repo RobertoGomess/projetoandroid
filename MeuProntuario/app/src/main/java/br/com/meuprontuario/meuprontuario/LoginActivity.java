@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,7 +43,9 @@ public class LoginActivity extends AppCompatActivity {
         txtvEsqueceSenha = (TextView) findViewById(R.id.textViewEsqueceuSenha);
         btnCadastrar = (Button)findViewById(R.id.btnCadastrar);
         btnEntrar = (Button)findViewById(R.id.btn_Entrar);
-
+        //instanciando o Tollbar
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
         //Eventos click
 
         txtvEsqueceSenha.setOnClickListener(new View.OnClickListener() {

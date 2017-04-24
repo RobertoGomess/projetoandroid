@@ -3,6 +3,8 @@ package br.com.meuprontuario.meuprontuario;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,6 +35,10 @@ public class CadastroActivity extends AppCompatActivity {
         txtConfirmaSenha = (EditText)findViewById(R.id.txtConfirmaSenha);
         switchTermos = (Switch)findViewById(R.id.switchTermos);
         btnCadastrarPasso2 = (Button)findViewById(R.id.btnCadastrarPasso2);
+        //instanciando ToolBar
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //eventos>>>>
         btnCadastrarPasso2.setOnClickListener(new View.OnClickListener() {
@@ -42,5 +48,13 @@ public class CadastroActivity extends AppCompatActivity {
                 startActivity(cadastroPasso2);
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+            finish();
+
+        return super.onOptionsItemSelected(item);
     }
 }
