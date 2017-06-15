@@ -20,6 +20,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +32,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
+
+    ImageButton btnAtendimentos;
+    ImageButton btnHome;
+    ImageButton btnEmergencia;
 
     BottomNavigationView navigation;
     public List<Receita> getListaReceita (){
@@ -45,12 +51,42 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        //instanciando os Buttom do menu de navagacao
+
+        btnAtendimentos = (ImageButton) findViewById(R.id.btn_atendimentos);
+        btnEmergencia = (ImageButton) findViewById(R.id.btn_emergencia);
+        btnHome = (ImageButton) findViewById(R.id.btn_home);
+
+        btnAtendimentos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this,AtendimentosActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this,AtendimentosActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnEmergencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this,AtendimentosActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        /*//instanciando os Buttom do menu de navagacao
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         //chamando o metodo que verifica o buttom do menu que foi clicado
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         //passando um buttom para ser o primeiro selecionado ao abrir o menu
         navigation.setSelectedItemId(R.id.navigation_home);
+       */
+
         //instanciando tollbar personalizada
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
@@ -61,19 +97,31 @@ public class HomeActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_toolbar_home, menu);
         return true;
     }
-
-
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // handle arrow click here
-        if (item.getItemId() == android.R.id.home) {
-            finish(); // close this activity and return to preview activity (if there is any)
-        }
 
-        return super.onOptionsItemSelected(item);
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Take appropriate action for each action item click
+        switch (item.getItemId()) {
+            case R.id.action_Perfil:
+                Toast.makeText(this, "perfil",Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.action_configuracao:
+                Toast.makeText(this, "configuração",Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.action_FeedBack:
+                Toast.makeText(this, "FeedBack",Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.action_Termo:
+                Toast.makeText(this, "Termos",Toast.LENGTH_LONG).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+
+
+ /*   private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
@@ -128,6 +176,6 @@ public class HomeActivity extends AppCompatActivity {
             return false;
         }
 
-    };
+    };*/
 
 }
