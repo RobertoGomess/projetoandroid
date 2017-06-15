@@ -8,6 +8,10 @@ import java.util.Date;
 
 public class Receita {
 
+    public Receita(){
+
+    }
+
     public Receita(int id, String data, String validade, String doenca, String descricao) {
         this.id = id;
         this.data = data;
