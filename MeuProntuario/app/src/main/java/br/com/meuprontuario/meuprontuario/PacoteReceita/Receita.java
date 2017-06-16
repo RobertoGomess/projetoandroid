@@ -1,4 +1,4 @@
-package br.com.meuprontuario.meuprontuario;
+package br.com.meuprontuario.meuprontuario.PacoteReceita;
 
 import java.util.Date;
 

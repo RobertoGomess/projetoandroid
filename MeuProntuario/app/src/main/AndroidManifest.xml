@@ -66,8 +66,8 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".AtendimentosActivity"
-            android:label="Atendimentos"
+            android:name=".PacoteReceita.ReceitasActivity"
+            android:label="Minhas receitas"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 

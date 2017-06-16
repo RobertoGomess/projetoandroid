@@ -1,41 +1,30 @@
 package br.com.meuprontuario.meuprontuario;
 
-import android.support.v4.app.Fragment;
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
-
-import com.google.android.gms.maps.SupportMapFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.meuprontuario.meuprontuario.PacoteReceita.Receita;
+import br.com.meuprontuario.meuprontuario.PacoteReceita.ReceitasActivity;
+
 public class HomeActivity extends AppCompatActivity {
 
-    ImageButton btnAtendimentos;
+    ImageButton btnReceitas;
     ImageButton btnHome;
     ImageButton btnEmergencia;
+    Context context = this;
 
     BottomNavigationView navigation;
     public List<Receita> getListaReceita (){
@@ -52,29 +41,33 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        btnAtendimentos = (ImageButton) findViewById(R.id.btn_atendimentos);
-        btnEmergencia = (ImageButton) findViewById(R.id.btn_emergencia);
         btnHome = (ImageButton) findViewById(R.id.btn_home);
+        btnEmergencia = (ImageButton) findViewById(R.id.btn_emergencia);
+        btnReceitas = (ImageButton) findViewById(R.id.btn_receitas);
 
-        btnAtendimentos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this,AtendimentosActivity.class);
-                startActivity(intent);
-            }
-        });
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this,AtendimentosActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(HomeActivity.this,ReceitasActivity.class);
+                //startActivity(intent);
+                Toast.makeText(context,"tela home" , Toast.LENGTH_LONG).show();
             }
         });
         btnEmergencia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this,AtendimentosActivity.class);
+                //Intent intent = new Intent(HomeActivity.this,ReceitasActivity.class);
+                //startActivity(intent);
+                Toast.makeText(context, "Tela Emergencia" , Toast.LENGTH_LONG).show();
+            }
+        });
+
+        btnReceitas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this,ReceitasActivity.class);
                 startActivity(intent);
+
             }
         });
 

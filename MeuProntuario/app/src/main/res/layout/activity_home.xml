@@ -25,11 +25,11 @@
         android:id="@+id/btn_home"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_above="@+id/btn_emergencia"
-        android:layout_alignStart="@+id/btn_emergencia"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="28dp"
         android:background="@color/colorPrimary"
-        app:srcCompat="@drawable/ic_home_grey600_36dp" />
+        app:srcCompat="@drawable/ic_home_grey600_36dp"
+        android:layout_above="@+id/btn_emergencia"
+        android:layout_alignStart="@+id/btn_emergencia" />
 
     <ImageButton
         android:id="@+id/btn_emergencia"
@@ -42,7 +42,7 @@
         />
 
     <ImageButton
-        android:id="@+id/btn_atendimentos"
+        android:id="@+id/btn_receitas"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_alignStart="@+id/btn_emergencia"

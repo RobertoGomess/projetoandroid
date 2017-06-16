@@ -1,4 +1,4 @@
-package br.com.meuprontuario.meuprontuario;
+package br.com.meuprontuario.meuprontuario.PacoteReceita;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.List;
+
+import br.com.meuprontuario.meuprontuario.R;
 
 /**
  * Created by aluno on 19/04/2017.
@@ -47,6 +49,9 @@ public class ReceitaAdapter extends RecyclerView.Adapter<ReceitaAdapter.MyViewHo
             }
         }
     }
+    public void setRecyclerViewOnClick(RecycleViewOnClikeListenerHack recycleViewOnClikeListenerHack){
+        this.recycleViewOnClikeListenerHack = recycleViewOnClikeListenerHack;
+    }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -60,10 +65,10 @@ public class ReceitaAdapter extends RecyclerView.Adapter<ReceitaAdapter.MyViewHo
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        holder.txtData.setText(mListaReceica.get(position).getData());
-        holder.txtDescrico.setText(mListaReceica.get(position).getDescricao());
-        holder.txtDoenca.setText(mListaReceica.get(position).getDoenca());
-        holder.txtValidade.setText(mListaReceica.get(position).getValidade());
+        holder.txtData.setText("Data: "+ mListaReceica.get(position).getData());
+        holder.txtDescrico.setText("Descrição: "+ mListaReceica.get(position).getDescricao());
+        holder.txtDoenca.setText("Doença: "+ mListaReceica.get(position).getDoenca());
+        holder.txtValidade.setText("Validade: "+ mListaReceica.get(position).getValidade());
 
     }
 
@@ -72,9 +77,7 @@ public class ReceitaAdapter extends RecyclerView.Adapter<ReceitaAdapter.MyViewHo
     {
         return mListaReceica.size();
     }
-    public void setRecycleViewOnClikeListenerHack(RecycleViewOnClikeListenerHack recycleViewOnClikeListenerHack){
-        this.recycleViewOnClikeListenerHack = recycleViewOnClikeListenerHack;
-    }
+
 
 
 }
