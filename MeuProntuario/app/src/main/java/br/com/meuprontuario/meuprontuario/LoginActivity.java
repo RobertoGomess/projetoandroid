@@ -36,7 +36,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         //instanciando elementos
-
         txtEmail = (EditText)findViewById(R.id.txtNomeUsuario);
         txtSenha = (EditText)findViewById(R.id.txtConfirmaSenha);
         switchLembraSenha = (Switch)findViewById(R.id.switchLembraSenha);

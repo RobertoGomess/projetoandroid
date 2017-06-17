@@ -1,6 +1,7 @@
 package br.com.meuprontuario.meuprontuario.PacoteReceita;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import br.com.meuprontuario.meuprontuario.CadastroActivity;
+import br.com.meuprontuario.meuprontuario.LoginActivity;
 import br.com.meuprontuario.meuprontuario.R;
 
 /**
@@ -50,7 +53,15 @@ public class ReceitasFragment extends Fragment implements RecycleViewOnClikeList
 
 
     @Override
+
+
     public void onClickListener(View view, int position) {
-        Toast.makeText(getActivity(),"position :"+position ,Toast.LENGTH_LONG).show();
+        Intent telaReceita = new Intent(this.getContext(),DetalhesReceita.class);
+        telaReceita.putExtra("DataReceita",listReceita.get(position).getData());
+        telaReceita.putExtra("Descricao",listReceita.get(position).getDescricao());
+        telaReceita.putExtra("Data",listReceita.get(position).getData());
+        telaReceita.putExtra("Doenca",listReceita.get(position).getDoenca());
+        telaReceita.putExtra("Validade",listReceita.get(position).getValidade());
+        startActivity(telaReceita);
     }
 }

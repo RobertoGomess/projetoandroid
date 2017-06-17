@@ -70,7 +70,7 @@
             android:label="Minhas receitas"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
+        <activity android:name=".PacoteReceita.DetalhesReceita"></activity>
     </application>
 
 </manifest>
