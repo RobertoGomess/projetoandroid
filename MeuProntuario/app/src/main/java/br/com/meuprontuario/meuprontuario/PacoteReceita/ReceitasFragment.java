@@ -56,12 +56,12 @@ public class ReceitasFragment extends Fragment implements RecycleViewOnClikeList
 
 
     public void onClickListener(View view, int position) {
-        Intent telaReceita = new Intent(this.getContext(),DetalhesReceita.class);
-        telaReceita.putExtra("DataReceita",listReceita.get(position).getData());
+        /*Intent telaReceita = new Intent(this.getContext(),DetalhesReceita.class);
+        /*telaReceita.putExtra("DataReceita",listReceita.get(position).getData());
         telaReceita.putExtra("Descricao",listReceita.get(position).getDescricao());
         telaReceita.putExtra("Data",listReceita.get(position).getData());
         telaReceita.putExtra("Doenca",listReceita.get(position).getDoenca());
-        telaReceita.putExtra("Validade",listReceita.get(position).getValidade());
-        startActivity(telaReceita);
+        telaReceita.putExtra("Validade",listReceita.get(position).getValidade());*/
+        //startActivity(telaReceita);
     }
 }

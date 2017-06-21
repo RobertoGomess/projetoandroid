@@ -1,6 +1,7 @@
 package br.com.meuprontuario.meuprontuario.PacoteReceita;
 
 
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import br.com.meuprontuario.meuprontuario.BaseRequester;
 import br.com.meuprontuario.meuprontuario.R;
@@ -24,6 +26,7 @@ public class ReceitasActivity extends AppCompatActivity {
 
     ProgressDialog progressDialog;
     Context context = this;
+    int idPac;
 
     ArrayList<Receita> listReceita = new ArrayList<>();
 
@@ -32,23 +35,18 @@ public class ReceitasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receitas);
 
+        Intent intent = getIntent();
+        idPac = Integer.parseInt(intent.getStringExtra("idPac"));
 
-        //Toast.makeText(this,"tela atendimentos",Toast.LENGTH_LONG).show();
+
+
+        //Toast.makeText(this,""+idPac,Toast.LENGTH_LONG).show();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        /*
-        ConsultasFragment consultasFragment = (ConsultasFragment) getSupportFragmentManager().findFragmentByTag("frag");
-        if (consultasFragment==null){
-            consultasFragment = new ConsultasFragment();
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.rl_frag_receita,consultasFragment,"receitaFrag");
-            ft.commit();
-        }
 
-        */
 
         progressDialog = ProgressDialog.show(ReceitasActivity.this, "Aguarde", "Baixando informações...");
 

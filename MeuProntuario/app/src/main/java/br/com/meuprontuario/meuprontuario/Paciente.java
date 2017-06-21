@@ -4,7 +4,7 @@ package br.com.meuprontuario.meuprontuario;
  * Created by Beto on 17/06/2017.
  */
 
-public class Paciente {
+public class Paciente extends StatusComunicacao {
     private int id;
     private String nome;
     private String telefone;

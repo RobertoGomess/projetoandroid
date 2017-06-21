@@ -1,9 +1,12 @@
 package br.com.meuprontuario.meuprontuario;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -25,21 +28,18 @@ public class HomeActivity extends AppCompatActivity {
     ImageButton btnHome;
     ImageButton btnEmergencia;
     Context context = this;
+    int idPac;
 
-    BottomNavigationView navigation;
-    public List<Receita> getListaReceita (){
-        List<Receita> listReceita = new ArrayList<>();
-        for (int x = 0; x<20; x++){
-            Receita receita = new Receita(x,x+1+"/01/2017",x+1+"/03/2017","Doenca"+x,"Descricao"+x);
-            listReceita.add(receita);
-        }
-        return listReceita;
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        //pegando a variavel da outra activity
+        Intent i = getIntent();
+        idPac =Integer.parseInt(i.getStringExtra("idPac"));
 
         btnHome = (ImageButton) findViewById(R.id.btn_home);
         btnEmergencia = (ImageButton) findViewById(R.id.btn_emergencia);
@@ -56,9 +56,9 @@ public class HomeActivity extends AppCompatActivity {
         btnEmergencia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(HomeActivity.this,ReceitasActivity.class);
-                //startActivity(intent);
-                Toast.makeText(context, "Tela Emergencia" , Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(HomeActivity.this,EmergenciaActivity.class);
+                startActivity(intent);
+                //Toast.makeText(context, "Tela Emergencia" , Toast.LENGTH_LONG).show();
             }
         });
 
@@ -66,19 +66,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this,ReceitasActivity.class);
+                intent.putExtra("idPac",""+idPac);
                 startActivity(intent);
 
             }
         });
 
 
-        /*//instanciando os Buttom do menu de navagacao
-        navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        //chamando o metodo que verifica o buttom do menu que foi clicado
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        //passando um buttom para ser o primeiro selecionado ao abrir o menu
-        navigation.setSelectedItemId(R.id.navigation_home);
-       */
 
         //instanciando tollbar personalizada
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -112,63 +106,24 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-
-
- /*   private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    //mTextMessage.setText(R.string.title_home);
-                    HomeFragment homeFragment = (HomeFragment) getSupportFragmentManager().findFragmentByTag("homeFrag");
-                    if (homeFragment==null){
-                        homeFragment = new HomeFragment();
-                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                        ft.replace(R.id.frag_tela,homeFragment,"homeFrag");
-                        ft.commit();
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_info)
+                .setTitle("Sair")
+                .setMessage("Deseja realmente sair do aplicativo?")
+                .setPositiveButton("Sim", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
                     }
 
-                    return true;
-                case R.id.navigation_emergencia:
-                   // mTextMessage.setText(R.string.title_emergencia);
-                    EmergenciaFragment emergenciaFragment= (EmergenciaFragment)
-                            getSupportFragmentManager().findFragmentByTag("emergenciaFrag");
-                    if (emergenciaFragment==null){
-                        emergenciaFragment = new EmergenciaFragment();
-                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                        ft.replace(R.id.frag_tela,emergenciaFragment,"emergenciaFrag");
-                        ft.commit();
-                    }
+                })
+                .setNegativeButton("Não", null)
+                .show();
+    }
 
-                    return true;
-                case R.id.navigation_consultas:
-                    //mTextMessage.setText(R.string.title_consultas);
-                    ConsultasFragment consultasFragment= (ConsultasFragment)
-                            getSupportFragmentManager().findFragmentByTag("consultaFrag");
-                    if (consultasFragment==null){
-                        consultasFragment = new ConsultasFragment();
-                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                        ft.replace(R.id.frag_tela,consultasFragment,"consultasFrag");
-                        ft.commit();
-                    }
-                    return true;
-                case R.id.navigation_perfil:
-                    //mTextMessage.setText(R.string.title_perfil);
-                    PerfilFragment perfilFragment= (PerfilFragment)
-                            getSupportFragmentManager().findFragmentByTag("consultaFrag");
-                    if (perfilFragment==null){
-                        perfilFragment = new PerfilFragment();
-                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                        ft.replace(R.id.frag_tela,perfilFragment,"consultasFrag");
-                        ft.commit();
-                    }
-                    return true;
-            }
-            return false;
-        }
 
-    };*/
 
 }
