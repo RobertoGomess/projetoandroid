@@ -24,8 +24,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.ExecutionException;
 
+import br.com.meuprontuario.meuprontuario.Const.Constantes;
 import br.com.meuprontuario.meuprontuario.PacoteReceita.MetodosHTTP;
 import br.com.meuprontuario.meuprontuario.PacoteReceita.Receita;
+import br.com.meuprontuario.meuprontuario.PacoteReceita.Requester;
 
 /**
  * Created by betoj on 07/04/2017.
@@ -96,7 +98,30 @@ public class LoginActivity extends AppCompatActivity {
     }
     public void veriifyShared(){
 
-        new sendLogin().execute();  /** Executa o nosso asyncTask **/
+        //new sendLogin().execute();  /** Executa o nosso asyncTask **/
+
+        Requester requester = new Requester();
+        requester.urli = Constantes.URL_LOGIN;
+
+        JSONObject objJson = new JSONObject();
+
+        try {
+            objJson.put("email", txtEmail.getText().toString());
+            objJson.put("senha", txtSenha.getText().toString());
+            requester.jsonObjectPut = objJson;
+
+            String retorno = requester.execute().get();
+            Toast.makeText(this, retorno, Toast.LENGTH_LONG).show();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+
+
 
     }
 
@@ -118,7 +143,7 @@ public class LoginActivity extends AppCompatActivity {
             Paciente rt = new Paciente();
             try {
                 String returnStr = "";
-                URL url = new URL("http://192.168.1.5/webservice/webservice/PacotePaciente/pacienteLogin.php");
+                URL url = new URL("http://betojunior.com.br/webservice/PacotePaciente/pacienteLogin.php");
 
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 //urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
